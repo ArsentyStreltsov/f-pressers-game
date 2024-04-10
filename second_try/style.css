@@ -38,7 +38,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #000;
+	background: white;
 }
 
 #unity-loading-bar {
@@ -100,14 +100,13 @@ body {
 }
 
 .moving-logo {
-	width: 685px;
-	height: auto;
-	margin-bottom: 50px;
+	width: 38%;
+	margin-bottom: 4%;
 }
 
 #computer-screen {
-	background-image: url('TemplateData/IMG_7782.PNG');
-	background-size: 100% 100%;
+	background-image: url('TemplateData/computer.webp');
+	background-size: 80% auto;
 	background-position: center;
 	background-repeat: no-repeat;
 	left: 5%;
@@ -117,5 +116,4 @@ body {
 	position: fixed;
 	z-index: 1;
 	padding: 0px;
-	margin-bottom: 50px;
 }
