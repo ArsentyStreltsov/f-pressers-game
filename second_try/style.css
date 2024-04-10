@@ -101,7 +101,7 @@ body {
 
 .moving-logo {
 	width: 38%;
-	margin-bottom: 4%;
+	margin-bottom: 8%;
 }
 
 #computer-screen {
@@ -110,10 +110,10 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	left: 5%;
-	top: 5%;
 	width: 90%;
-	height: 90%;
+	height: 100%;
 	position: fixed;
 	z-index: 1;
 	padding: 0px;
+	margin-bottom: 4%;
 }
