@@ -1,53 +1,52 @@
 <!DOCTYPE html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link rel="stylesheet" href="style.css">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="style.css">
 	<title>Disappearing In</title>
-	</head>
-	<body>
-		<div id="fade-screen"
-			style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: black; z-index: 9999; opacity: 0; display: none;">
-		</div>
+</head>
 
+<body>
+	<div id="fade-screen"
+		style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: black; z-index: 9999; opacity: 0; display: none;">
+	</div>
 
-		<div id="unity-container" class="unity-desktop">		
-			<canvas id="unity-canvas"></canvas>
-		</div>
-		<div id="loading-cover">
+	<div id="unity-container" class="unity-desktop">
+		<canvas id="unity-canvas"></canvas>
+	</div>
 
-			<div id="unity-loading-bar">
-				<div id="rotate-screen-prompt"
-					style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); color: white; justify-content: center; align-items: center; display: flex; font-size: 20px; z-index: 10000;">
-					Пожалуйста, переверните ваше устройство.
-				</div>
-
-				<button id="play-video-button"
-					style="display:none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10001;">Tap to
-					play</button>
-
-
-
-				<video id="moving-logo" autoplay loop muted>
-					<source src="TemplateData/main_shot.mp4" type="video/mp4">
-					Ваш браузер не поддерживает видео тег.
-				</video>
-
-				<video id="final-shot-video" class="moving-logo" autoplay muted style="display: none;">
-					<source src="TemplateData/final_shot.mp4" type="video/mp4">
-					Ваш браузер не поддерживает видео тег.
-				</video>
-
-
-				<div id="unity-progress-bar-empty">
-					<div id="unity-progress-bar-full"></div>
-				</div>
-				<div class="spinner"></div>
+	<div id="loading-cover">
+		<div id="unity-loading-bar">
+			<div id="rotate-screen-prompt"
+				style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.75); color: white; justify-content: center; align-items: center; display: flex; font-size: 20px; z-index: 10000;">
+				Пожалуйста, переверните ваше устройство.
 			</div>
+
+			<div id="play-button"
+				style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10001;">
+				<span>Запустить видео</span>
+			</div>
+
+			<video id="moving-logo" autoplay loop muted playsinline>
+				<source src="TemplateData/main_shot.mp4" type="video/mp4">
+				Ваш браузер не поддерживает видео тег.
+			</video>
+
+			<video id="final-shot-video" class="moving-logo" autoplay muted playsinline style="display: none;">
+				<source src="TemplateData/final_shot.mp4" type="video/mp4">
+				Ваш браузер не поддерживает видео тег.
+			</video>
+
+			<div id="unity-progress-bar-empty">
+				<div id="unity-progress-bar-full"></div>
+			</div>
+			<div class="spinner"></div>
 		</div>
+	</div>
 
+	<script src="config-unity.js"></script>
+</body>
 
-		<script src="config-unity.js"></script>
-	</body>
 </html>
