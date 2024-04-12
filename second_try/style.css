@@ -99,9 +99,9 @@ body {
 	display: none;
 }
 
-.moving-logo {
+#moving-logo {
 	width: 38%;
-	margin-bottom: 8%;
+	margin-bottom: 0%;
 }
 
 #computer-screen {
@@ -115,5 +115,28 @@ body {
 	position: fixed;
 	z-index: 1;
 	padding: 0px;
-	margin-bottom: 4%;
+}
+
+#final-shot-video {
+	display: none;
+	width: 38%;
+	margin-bottom: 0%;
+}
+
+@keyframes expandVideo {
+	from {
+		width: 38%;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+
+#final-shot-video.expanded {
+	animation-name: expandVideo;
+	animation-duration: 1s;
+	/* Продолжительность анимации */
+	animation-fill-mode: forwards;
+	/* Заставляет элемент оставаться в состоянии конечного кадра анимации */
 }
