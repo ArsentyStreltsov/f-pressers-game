@@ -151,3 +151,17 @@ body {
     animation-fill-mode: forwards; /* Оставляет элемент в конечном состоянии анимации */
 }
 
+
+@media (orientation: portrait) {
+	#rotate-screen-prompt {
+		display: flex;
+		/* Показывать при вертикальной ориентации */
+	}
+}
+
+@media (orientation: landscape) {
+	#rotate-screen-prompt {
+		display: none;
+		/* Скрывать при горизонтальной ориентации */
+	}
+}

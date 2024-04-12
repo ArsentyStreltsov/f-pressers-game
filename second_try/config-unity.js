@@ -23,6 +23,38 @@ var SetLoadProgress = function (progress) {
 	elemProgressFull.style.width = `${100 * remapped}%`;
 };
 
+window.addEventListener('orientationchange', function () {
+	checkOrientation();
+	tryPlayVideo();
+});
+
+function checkOrientation() {
+	var orientation = window.orientation;
+	var prompt = document.getElementById('rotate-screen-prompt');
+	if (orientation === 0 || orientation === 180) {
+		prompt.style.display = 'flex'; // Показать уведомление при вертикальной ориентации
+	} else {
+		prompt.style.display = 'none'; // Скрыть уведомление при горизонтальной ориентации
+	}
+}
+
+function tryPlayVideo() {
+	var finalShotVideo = document.getElementById('final-shot-video');
+	if (window.orientation === 90 || window.orientation === -90) {
+		// Попытаться воспроизвести видео, если устройство находится в горизонтальной ориентации
+		finalShotVideo.play().catch(function (error) {
+			console.log("Видео не удалось запустить автоматически: ", error);
+		});
+	}
+}
+
+// При загрузке страницы проверяем ориентацию и пытаемся воспроизвести видео
+document.addEventListener('DOMContentLoaded', function () {
+	checkOrientation();
+	tryPlayVideo();
+});
+
+
 var NotifyLoaded = function () {
 	let elemCover = document.querySelector("#loading-cover");
 	let movingLogo = document.getElementById('moving-logo');
