@@ -135,8 +135,19 @@ body {
 
 #final-shot-video.expanded {
 	animation-name: expandVideo;
-	animation-duration: 1s;
-	/* Продолжительность анимации */
+	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
-	/* Заставляет элемент оставаться в состоянии конечного кадра анимации */
 }
+
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.fade-out {
+    animation-name: fadeOut;
+    animation-duration: 1s; /* Продолжительность анимации */
+    animation-fill-mode: forwards; /* Оставляет элемент в конечном состоянии анимации */
+}
+
