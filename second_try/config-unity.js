@@ -27,7 +27,7 @@ var NotifyLoaded = function () {
 	let elemCover = document.querySelector("#loading-cover");
 	let movingLogo = document.getElementById('moving-logo');
 	let finalShotVideo = document.getElementById('final-shot-video');
-	let fadeScreen = document.getElementById('fade-screen'); // Получаем доступ к элементу черного экрана
+	let fadeScreen = document.getElementById('fade-screen'); 
 
 	movingLogo.style.display = 'none';
 	finalShotVideo.style.display = 'block';
@@ -41,10 +41,9 @@ var NotifyLoaded = function () {
 	finalShotVideo.onended = function () {
 		elemCover.style.display = 'none';
 
-		// Показываем элемент fade-screen и начинаем анимацию исчезновения
-		fadeScreen.style.display = 'block'; // Убедитесь, что fade-screen изначально скрыт (display: none)
-		fadeScreen.style.opacity = 1; // Установить прозрачность на 1, если это ещё не установлено
-		fadeScreen.classList.add('fade-out'); // Добавляем класс, который начнет анимацию fade out
+		fadeScreen.style.display = 'block'; 
+		fadeScreen.style.opacity = 1; 
+		fadeScreen.classList.add('fade-out'); 
 	};
 };
 
