@@ -25,21 +25,21 @@ var SetLoadProgress = function (progress) {
 
 var NotifyLoaded = function () {
 	let elemCover = document.querySelector("#loading-cover");
-	let movingLogo = document.getElementById('moving-logo');
-	let finalShotVideo = document.getElementById('final-shot-video');
+	let video2 = document.getElementById('video2');
+	let video3 = document.getElementById('video3');
 	let fadeScreen = document.getElementById('fade-screen'); // Получаем доступ к элементу черного экрана
 	
 
-	movingLogo.style.display = 'none';
-	finalShotVideo.style.display = 'block';
+	video2.style.display = 'none';
+	video3.style.display = 'block';
 
-	finalShotVideo.onplay = function () {
+	video3.onplay = function () {
 		setTimeout(function () {
-			finalShotVideo.classList.add('expanded');
+			video3.classList.add('expanded');
 		}, 450);
 	};
 
-	finalShotVideo.onended = function () {
+	video3.onended = function () {
 		elemCover.style.display = 'none';
 
 		// Показываем элемент fade-screen и начинаем анимацию исчезновения
