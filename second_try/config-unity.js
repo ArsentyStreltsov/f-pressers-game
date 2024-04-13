@@ -25,13 +25,20 @@ var SetLoadProgress = function (progress) {
 
 var NotifyLoaded = function () {
 	let elemCover = document.querySelector("#loading-cover");
-	let video2 = document.getElementById('video2');
+	let video1 = document.getElementById('video1');
 	let video3 = document.getElementById('video3');
 	let fadeScreen = document.getElementById('fade-screen'); // Получаем доступ к элементу черного экрана
 	
 
-	video2.style.display = 'none';
+	video1.style.display = 'none';
 	video3.style.display = 'block';
+
+	// video2.onended = function () {
+	// 	video2.style.display = 'none';
+	// 	video3.style.display = 'block';
+	// 	video3.play();
+	// };
+
 
 	video3.onplay = function () {
 		setTimeout(function () {
