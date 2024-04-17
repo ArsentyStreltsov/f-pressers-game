@@ -61,3 +61,22 @@ script.onload = () => {
 		});
 };
 document.body.appendChild(script);
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+	var videoPath;
+
+	// Проверяем, использует ли пользователь iPhone
+	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+		videoPath = "TemplateData/Screenloader-for-IOS.mp4"; // Видео для iPhone
+	} else {
+		videoPath = "TemplateData/ScreenLoader-New-Animation.webm"; // Видео для других устройств
+	}
+
+	// Задаем путь видео для тега <video>
+	var videoElement = document.getElementById('video1');
+	videoElement.querySelector('source').src = videoPath;
+	videoElement.load(); // Перезагружаем видео после смены источника
+});
