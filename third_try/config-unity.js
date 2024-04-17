@@ -69,17 +69,27 @@ document.body.appendChild(script);
 
 document.addEventListener('DOMContentLoaded', function () {
 	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-	var videoPath;
+	var videoPath1, videoPath3;
 
 	// Проверяем, использует ли пользователь iPhone
 	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-		videoPath = "TemplateData/Screenloader-for-IOS.mp4"; // Видео для iPhone
+		videoPath1 = "TemplateData/Screenloader-for-IOS.mp4"; // Видео для iPhone
+	} else if (/Safari/.test(userAgent) && !/Chrome/.test(userAgent)) {
+		// Проверяем, использует ли пользователь Safari (не Chrome, который также включает слово "Safari" в userAgent)
+		videoPath1 = "TemplateData/ScreenLoader-New-Animation.mp4"; // Отдельный путь видео для Safari
+		videoPath3 = "TemplateData/ScreenLoader-New-Ending.mp4"; // Отдельный путь видео для Safari
 	} else {
-		videoPath = "TemplateData/ScreenLoader-New-Animation.webm"; // Видео для других устройств
+		videoPath1 = "TemplateData/ScreenLoader-New-Animation.webm"; // Видео для других устройств
+		videoPath3 = "TemplateData/ScreenLoader-New-Ending.webm"; // Видео для других устройств
 	}
 
-	// Задаем путь видео для тега <video>
-	var videoElement = document.getElementById('video1');
-	videoElement.querySelector('source').src = videoPath;
-	videoElement.load(); // Перезагружаем видео после смены источника
+	// Задаем путь видео для первого тега <video>
+	var videoElement1 = document.getElementById('video1');
+	videoElement1.querySelector('source').src = videoPath1;
+	videoElement1.load(); // Перезагружаем видео после смены источника
+
+	// Задаем путь видео для второго тега <video>
+	var videoElement3 = document.getElementById('video3');
+	videoElement3.querySelector('source').src = videoPath3;
+	videoElement3.load(); // Перезагружаем видео после смены источника
 });
