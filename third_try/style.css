@@ -177,7 +177,7 @@ body {
 
 .text {
 	color: white;
-	width: 50%;
+	width: 60%;
 	font-size: 60%;
 	font-family: "Jost";
 	text-align: center;
@@ -186,7 +186,7 @@ body {
 
 @media screen and (max-width: 810px) and (min-width: 651px) {
   .text {
-		font-size: 55%;
+		font-size: 50%;
 		width: 75%;
 	}
 
@@ -202,9 +202,17 @@ body {
 	}
 }
 
+@media screen and (max-width: 650px) and (min-width: 501px) {
+	.text {
+		font-size: 40%;
+		width: 85%;
+	}
+}
+
 @media screen and (max-width: 500px) {
 	.text {
 		font-size: 40%;
+		width: 75%;
 	}
 
 	@keyframes expandVideo {
