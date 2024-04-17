@@ -49,6 +49,9 @@ var NotifyLoaded = function () {
 		fadeScreen.style.display = 'block'; 
 		fadeScreen.style.opacity = 1;
 		fadeScreen.classList.add('fade-out');
+		fadeScreen.addEventListener('animationend', function () {
+			fadeScreen.style.display = 'none';
+		});
 	};
 };
 
