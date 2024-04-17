@@ -151,7 +151,7 @@ body {
 
 #video3.expanded {
 	animation-name: expandVideo;
-	animation-duration: 1.5s;
+	animation-duration: 2s;
 	animation-fill-mode: forwards;
 }
 
@@ -172,4 +172,63 @@ body {
 	/* Продолжительность анимации */
 	animation-fill-mode: forwards;
 	/* Оставляет элемент в конечном состоянии анимации */
+}
+
+.text_div {
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.text {
+	color: white;
+	width: 50%;
+	font-size: 90%;
+	font-family: "Jost";
+	text-align: center;
+}
+
+@media screen and (max-width: 810px) {
+  .text {
+		font-size: 70%;
+		width: 75%;
+	}
+
+	.video {
+		width: 60%;
+	}
+
+	@keyframes expandVideo {
+		from {
+			width: 60%;
+		}
+
+		to {
+			width: 275%;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.video {
+		width: 75%;
+	}
+
+	@keyframes expandVideo {
+		from {
+			width: 75%;
+		}
+
+		to {
+			width: 600%;
+		}
+	}
+}
+
+@media screen and (min-width: 1500px) {
+  .text {
+		font-size: 150%;
+		width: 75%;
+	}
 }

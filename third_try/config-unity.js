@@ -27,18 +27,11 @@ var NotifyLoaded = function () {
 	let elemCover = document.querySelector("#loading-cover");
 	let video1 = document.getElementById('video1');
 	let video3 = document.getElementById('video3');
-	let fadeScreen = document.getElementById('fade-screen'); // Получаем доступ к элементу черного экрана
+	let fadeScreen = document.getElementById('fade-screen'); 
 	
 
 	video1.style.display = 'none';
 	video3.style.display = 'block';
-
-	// video2.onended = function () {
-	// 	video2.style.display = 'none';
-	// 	video3.style.display = 'block';
-	// 	video3.play();
-	// };
-
 
 	video3.onplay = function () {
 		setTimeout(function () {
@@ -49,10 +42,9 @@ var NotifyLoaded = function () {
 	video3.onended = function () {
 		elemCover.style.display = 'none';
 
-		// Показываем элемент fade-screen и начинаем анимацию исчезновения
-		fadeScreen.style.display = 'block'; // Убедитесь, что fade-screen изначально скрыт (display: none)
-		fadeScreen.style.opacity = 1; // Установить прозрачность на 1, если это ещё не установлено
-		fadeScreen.classList.add('fade-out'); // Добавляем класс, который начнет анимацию fade out
+		fadeScreen.style.display = 'block'; 
+		fadeScreen.style.opacity = 1;
+		fadeScreen.classList.add('fade-out');
 	};
 };
 
