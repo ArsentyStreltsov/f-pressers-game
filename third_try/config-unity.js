@@ -28,6 +28,8 @@ var NotifyLoaded = function () {
 	let video1 = document.getElementById('video1');
 	let video3 = document.getElementById('video3');
 	let fadeScreen = document.getElementById('fade-screen'); 
+	let textDiv = document.getElementById('text_div'); 
+
 	
 
 	video1.style.display = 'none';
@@ -36,7 +38,9 @@ var NotifyLoaded = function () {
 	video3.onplay = function () {
 		setTimeout(function () {
 			video3.classList.add('expanded');
-		}, 450);
+			textDiv.style.display = 'none';
+
+		}, 500);
 	};
 
 	video3.onended = function () {
