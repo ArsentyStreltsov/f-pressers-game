@@ -33,13 +33,10 @@ var NotifyLoaded = function () {
 	let userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
 	// Проверка, использует ли пользователь iPhone
-			// Check for iPhone/iPad/iPod using a regular expression
-		if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-			video1.src = "TemplateData/Screenloader-for-IOS.mp4";
-			textDiv.style.display = 'none';
-			// Don't load the game on iPhones
-			return;
-		} else {
+	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+		video1.style.display = 'block'; // Показываем video1 для iPhone
+		video3.style.display = 'none';  // Скрываем video3 для iPhone
+	} else {
 		video1.style.display = 'none';  // Скрываем video1 для не-iPhone
 		video3.style.display = 'block'; // Показываем video3 для не-iPhone
 
@@ -98,30 +95,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 var StartupDelay = 2.0;
-
-
-
-
-// // Check for iPhone/iPad/iPod using a regular expression
-// if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-// 	video1.src = "TemplateData/Screenloader-for-IOS.mp4";
-// 	textDiv.style.display = 'none';
-// 	// Don't load the game on iPhones
-// 	return;
-// }
-
-	// video3.onended = function () {
-	// 	elemCover.style.display = 'none';
-
-	// 	fadeScreen.style.display = 'block';
-	// 	fadeScreen.style.opacity = 1;
-	// 	fadeScreen.classList.add('fade-out');
-	// 	fadeScreen.addEventListener('animationend', function () {
-	// 		fadeScreen.style.display = 'none';
-	// 		// Load the game only on non-iPhone devices
-	// 		createUnityInstance(elemCanvas, config, SetLoadProgress)
-	// 			.catch(message => {
-	// 				alert(message);
-	// 			});
-	// 	});
-	// };
