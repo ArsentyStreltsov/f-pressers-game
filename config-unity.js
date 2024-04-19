@@ -69,26 +69,28 @@ document.body.appendChild(script);
 
 document.addEventListener('DOMContentLoaded', function () {
 	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-	var videoPath1, videoPath3;
+	var videoPath1;
+	var videoPath3;
+	let textDiv = document.getElementById('text_div');
 
-	// Проверяем, использует ли пользователь iPhone
+
+
 	if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-		videoPath1 = "TemplateData/Screenloader-for-IOS.mp4"; // Видео для iPhone
+		videoPath1 = "TemplateData/Screenloader-for-IOS.mp4"; 
 		textDiv.style.display = 'none';
 	} else {
-		videoPath1 = "TemplateData/ScreenLoader-New-Animation.mp4"; // Видео для других устройств
-		videoPath3 = "TemplateData/ScreenLoader-New-Ending.mp4"; // Видео для других устройств
+		videoPath1 = "TemplateData/ScreenLoader-New-Animation.mp4"; 
+		videoPath3 = "TemplateData/ScreenLoader-New-Ending.mp4"; 
+
 	}
 
-	// Задаем путь видео для первого тега <video>
 	var videoElement1 = document.getElementById('video1');
 	videoElement1.querySelector('source').src = videoPath1;
-	videoElement1.load(); // Перезагружаем видео после смены источника
+	videoElement1.load(); 
 
-	// Задаем путь видео для второго тега <video>
 	var videoElement3 = document.getElementById('video3');
 	videoElement3.querySelector('source').src = videoPath3;
-	videoElement3.load(); // Перезагружаем видео после смены источника
+	videoElement3.load();
 });
 
 var StartupDelay = 2.0;
