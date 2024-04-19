@@ -39,7 +39,7 @@ body {
 }
 
 #loading-cover {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -51,12 +51,13 @@ body {
 }
 
 #unity-loading-bar {
-	flex: 1 1 auto;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+	width: 100%;
 }
 
 #unity-progress-bar-empty {
@@ -165,12 +166,11 @@ body {
 
 .text_div {
 	position: absolute;
-	width: 90%;
+	bottom: 0;
+	width: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	bottom: 0;
-	margin-bottom: 20px;
+	padding: 20px;
 }
 
 .text_div img {
@@ -207,3 +207,21 @@ body {
 	}
 }
 
+@media screen and (orientation: landscape) {
+
+	.video {
+		margin-bottom: 10vh;
+	}
+
+	.text_div img {
+		width: 50%;
+		max-height: 10vh;
+	}
+
+	.text_div {
+		position: absolute;
+		bottom: 10px;
+		width: 100%;
+		padding: 10px;
+	}
+}
